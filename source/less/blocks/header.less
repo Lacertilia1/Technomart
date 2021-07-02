@@ -1,0 +1,80 @@
+// header.less
+
+.header {
+  font-family: "Cuprum", "Arial", sans-serif;
+}
+
+// Врапперы
+.header__search-box-wrapper {
+  width: 100%;
+
+  background: var(--blue);
+}
+
+.header__search-box {
+  position: relative;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__logo-wrapper {
+  position: absolute;
+  left: 0;
+
+  padding: 11px 56px 10px;
+
+  background-color: var(--red);
+
+  box-shadow: inset 0 -5px 0 var(--dark-red);
+}
+
+.header__block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 684px;
+}
+// Логотип
+.header__logo {
+  fill: var(--white);
+}
+
+// Элементы навигации
+
+.header__link {
+  font-size: 18px;
+
+  color: var(--white);
+}
+
+.header__link--third {
+  background-color: var(--green);
+}
+
+.header__search {
+  position: relative;
+
+  font-size: 18px;
+
+  background-color: transparent;
+  color: var(--white);
+
+  border: none;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    top: 2px;
+    left: -19px;
+
+    width: 17px;
+    height: 17px;
+
+    background-image: url("../../img/svg/icon-search.svg");
+    background-repeat: no-repeat;
+  }
+}
