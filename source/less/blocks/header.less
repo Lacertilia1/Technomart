@@ -7,6 +7,7 @@
 // Врапперы
 .header__search-box-wrapper {
   width: 100%;
+  min-height: 42px;
 
   background: var(--blue);
 }
@@ -16,6 +17,8 @@
 
   display: flex;
   justify-content: flex-end;
+
+  min-height: 42px;
 }
 
 .header__logo-wrapper {
@@ -44,9 +47,55 @@
 // Элементы навигации
 
 .header__link {
+  padding: 9px 16px 9px 19px;
+
   font-size: 18px;
 
   color: var(--white);
+}
+
+.header__link--first {
+  position: relative;
+
+  margin-right: 27px;
+  margin-left: 32px;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    top: 12px;
+    left: -3px;
+
+    width: 14px;
+    height: 16px;
+
+    background-image: url("../../img/svg/icon-bookmark.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+.header__link--second {
+  position: relative;
+
+  margin-right: 11px;
+  padding-left: 31px;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    top: 12px;
+    left: 8px;
+
+    width: 15px;
+    height: 15px;
+
+    background-image: url("../../img/svg/icon-cart.svg");
+    background-repeat: no-repeat;
+  }
 }
 
 .header__link--third {
@@ -56,6 +105,8 @@
 .header__search {
   position: relative;
 
+  height: 100%;
+
   font-size: 18px;
 
   background-color: transparent;
@@ -63,12 +114,14 @@
 
   border: none;
 
+  cursor: pointer;
+
   &::before {
     content: "";
 
     position: absolute;
 
-    top: 2px;
+    top: 12px;
     left: -19px;
 
     width: 17px;
@@ -77,4 +130,91 @@
     background-image: url("../../img/svg/icon-search.svg");
     background-repeat: no-repeat;
   }
+}
+
+.header__link-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 100%;
+}
+
+// header__contacts
+
+.header__contacts {
+  padding-top: 46px;
+  background-color: var(--light-blue);
+}
+
+.header__contacts-list {
+  display: flex;
+  justify-content: space-between;
+
+  .no__margin-padding();
+  list-style-type: none;
+}
+
+.header__contacts-item:nth-of-type(1) {
+  box-sizing: border-box;
+  width: 257px;
+  padding-right: 30px;
+  padding-left: 30px;
+  text-align: center;
+}
+
+.header__text {
+  .no__margin-padding();
+
+  font-size: 16px;
+  line-height: 23px;
+  text-align: left;
+  font-style: italic;
+
+  color: var(--red);
+}
+
+.header__contacts-item:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 270px;
+}
+
+.header__phone {
+  position: relative;
+
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+
+  font-size: 21px;
+  line-height: 30px;
+  font-weight: 700;
+
+  color: var(--red);
+  background-color: transparent;
+
+  border: 3px solid var(--white);
+
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    top: 12px;
+    left: -3px;
+
+    width: 19px;
+    height: 19px;
+
+    background-image: url("../../img/svg/icon-phone.svg");
+    background-repeat: no-repeat;
+  }
+}
+
+.header__contacts-item:nth-of-type(3) {
+  width: 281px;
 }
